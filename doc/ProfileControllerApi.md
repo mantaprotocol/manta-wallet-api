@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**createUserProfile**](ProfileControllerApi.md#createuserprofile) | **POST** /profile | 
 [**getAssetTransferLogicsig**](ProfileControllerApi.md#getassettransferlogicsig) | **GET** /profile/logicSignature/assetTransfer | 
 [**getFeeDelegationLogicsig**](ProfileControllerApi.md#getfeedelegationlogicsig) | **GET** /profile/logicSignature/feeDelegation | 
+[**getUserProfile**](ProfileControllerApi.md#getuserprofile) | **GET** /profile | 
 [**optin**](ProfileControllerApi.md#optin) | **POST** /profile/optin | 
 
 
@@ -118,6 +119,43 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**SignedLogicSignatureDto**](SignedLogicSignatureDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUserProfile**
+> ProfileDto getUserProfile()
+
+
+
+### Example
+```dart
+import 'package:manta_wallet_api/api.dart';
+
+final api = MantaWalletApi().getProfileControllerApi();
+
+try {
+    final response = api.getUserProfile();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ProfileControllerApi->getUserProfile: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ProfileDto**](ProfileDto.md)
 
 ### Authorization
 

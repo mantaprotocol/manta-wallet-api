@@ -67,6 +67,7 @@ Class | Method | HTTP request | Description
 [*ProfileControllerApi*](doc/ProfileControllerApi.md) | [**createUserProfile**](doc/ProfileControllerApi.md#createuserprofile) | **POST** /profile | 
 [*ProfileControllerApi*](doc/ProfileControllerApi.md) | [**getAssetTransferLogicsig**](doc/ProfileControllerApi.md#getassettransferlogicsig) | **GET** /profile/logicSignature/assetTransfer | 
 [*ProfileControllerApi*](doc/ProfileControllerApi.md) | [**getFeeDelegationLogicsig**](doc/ProfileControllerApi.md#getfeedelegationlogicsig) | **GET** /profile/logicSignature/feeDelegation | 
+[*ProfileControllerApi*](doc/ProfileControllerApi.md) | [**getUserProfile**](doc/ProfileControllerApi.md#getuserprofile) | **GET** /profile | 
 [*ProfileControllerApi*](doc/ProfileControllerApi.md) | [**optin**](doc/ProfileControllerApi.md#optin) | **POST** /profile/optin | 
 
 
