@@ -1,6 +1,8 @@
 import 'package:manta_wallet_api/src/model/create_profile_dto.dart';
+import 'package:manta_wallet_api/src/model/fee_delegation_logic_signature_dto.dart';
 import 'package:manta_wallet_api/src/model/optin_dto.dart';
 import 'package:manta_wallet_api/src/model/profile_dto.dart';
+import 'package:manta_wallet_api/src/model/seed_backup_dto.dart';
 import 'package:manta_wallet_api/src/model/signed_logic_signature_dto.dart';
 
 final _regList = RegExp(r'^List<(.*)>$');
@@ -23,10 +25,14 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return (value is double ? value : double.parse('$value')) as ReturnType;
         case 'CreateProfileDto':
           return CreateProfileDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'FeeDelegationLogicSignatureDto':
+          return FeeDelegationLogicSignatureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'OptinDto':
           return OptinDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ProfileDto':
           return ProfileDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'SeedBackupDto':
+          return SeedBackupDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SignedLogicSignatureDto':
           return SignedLogicSignatureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         default:
