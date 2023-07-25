@@ -53,7 +53,10 @@ class ProfileControllerApi {
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -71,9 +74,10 @@ _bodyData=jsonEncode(createProfileDto);
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -85,17 +89,19 @@ _bodyData=jsonEncode(createProfileDto);
       onReceiveProgress: onReceiveProgress,
     );
 
-    ProfileDto _responseData;
+    ProfileDto? _responseData;
 
     try {
-_responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ProfileDto, ProfileDto>(rawData, 'ProfileDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<ProfileDto>(
@@ -141,7 +147,10 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -188,7 +197,10 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -203,17 +215,19 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
       onReceiveProgress: onReceiveProgress,
     );
 
-    SignedLogicSignatureDto _responseData;
+    SignedLogicSignatureDto? _responseData;
 
     try {
-_responseData = deserialize<SignedLogicSignatureDto, SignedLogicSignatureDto>(_response.data!, 'SignedLogicSignatureDto', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<SignedLogicSignatureDto, SignedLogicSignatureDto>(rawData, 'SignedLogicSignatureDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<SignedLogicSignatureDto>(
@@ -257,7 +271,10 @@ _responseData = deserialize<SignedLogicSignatureDto, SignedLogicSignatureDto>(_r
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -272,17 +289,19 @@ _responseData = deserialize<SignedLogicSignatureDto, SignedLogicSignatureDto>(_r
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    String? _responseData;
 
     try {
-_responseData = deserialize<String, String>(_response.data!, 'String', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<String>(
@@ -326,7 +345,10 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -341,17 +363,19 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
       onReceiveProgress: onReceiveProgress,
     );
 
-    SignedLogicSignatureDto _responseData;
+    SignedLogicSignatureDto? _responseData;
 
     try {
-_responseData = deserialize<SignedLogicSignatureDto, SignedLogicSignatureDto>(_response.data!, 'SignedLogicSignatureDto', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<SignedLogicSignatureDto, SignedLogicSignatureDto>(rawData, 'SignedLogicSignatureDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<SignedLogicSignatureDto>(
@@ -395,7 +419,10 @@ _responseData = deserialize<SignedLogicSignatureDto, SignedLogicSignatureDto>(_r
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -410,17 +437,19 @@ _responseData = deserialize<SignedLogicSignatureDto, SignedLogicSignatureDto>(_r
       onReceiveProgress: onReceiveProgress,
     );
 
-    FeeDelegationLogicSignatureDto _responseData;
+    FeeDelegationLogicSignatureDto? _responseData;
 
     try {
-_responseData = deserialize<FeeDelegationLogicSignatureDto, FeeDelegationLogicSignatureDto>(_response.data!, 'FeeDelegationLogicSignatureDto', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<FeeDelegationLogicSignatureDto, FeeDelegationLogicSignatureDto>(rawData, 'FeeDelegationLogicSignatureDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<FeeDelegationLogicSignatureDto>(
@@ -464,7 +493,10 @@ _responseData = deserialize<FeeDelegationLogicSignatureDto, FeeDelegationLogicSi
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -479,17 +511,19 @@ _responseData = deserialize<FeeDelegationLogicSignatureDto, FeeDelegationLogicSi
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    String? _responseData;
 
     try {
-_responseData = deserialize<String, String>(_response.data!, 'String', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<String>(
@@ -537,7 +571,10 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -555,9 +592,10 @@ _bodyData=jsonEncode(signedLogicSignatureDto);
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -603,7 +641,10 @@ _bodyData=jsonEncode(signedLogicSignatureDto);
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -621,9 +662,10 @@ _bodyData=jsonEncode(signedLogicSignatureDto);
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -667,7 +709,10 @@ _bodyData=jsonEncode(signedLogicSignatureDto);
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -682,17 +727,19 @@ _bodyData=jsonEncode(signedLogicSignatureDto);
       onReceiveProgress: onReceiveProgress,
     );
 
-    ProfileDto _responseData;
+    ProfileDto? _responseData;
 
     try {
-_responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ProfileDto, ProfileDto>(rawData, 'ProfileDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<ProfileDto>(
@@ -738,7 +785,10 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -753,17 +803,19 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
       onReceiveProgress: onReceiveProgress,
     );
 
-    ProfileDto _responseData;
+    ProfileDto? _responseData;
 
     try {
-_responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ProfileDto, ProfileDto>(rawData, 'ProfileDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<ProfileDto>(
@@ -809,7 +861,10 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
@@ -827,9 +882,10 @@ _bodyData=jsonEncode(optinDto);
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -841,17 +897,19 @@ _bodyData=jsonEncode(optinDto);
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    String? _responseData;
 
     try {
-_responseData = deserialize<String, String>(_response.data!, 'String', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<String>(
@@ -897,7 +955,10 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
       },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          
+          {
+            'type': 'openIdConnect',
+            'name': 'openid',
+          },
         ],
         ...?extra,
       },
